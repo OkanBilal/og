@@ -1,19 +1,49 @@
-import { GitHub, Linkedin, Twitter, Figma } from "../components/icons";
+import {
+  Website,
+  Email,
+  Bluesky,
+  Instagram,
+  Facebook,
+  Figma,
+  GitHub,
+  Linkedin,
+  Tiktok,
+  Twitter,
+  Youtube
+} from "../components/icons";
 
 export interface SocialItem {
   id: number;
-  Icon: typeof GitHub | typeof Linkedin | typeof Twitter | typeof Figma;
+  Icon: typeof Website | typeof Email | typeof Bluesky | typeof Instagram | typeof Facebook | typeof Figma | typeof GitHub | typeof Linkedin | typeof Tiktok | typeof Twitter | typeof Youtube;
   value: string;
-  key: 'github' | 'linkedin' | 'twitter' | 'figma';
+  label: string;
+  key: 'website' | 'email' | 'bluesky' | 'instagram' | 'facebook' | 'figma' | 'github' | 'linkedin' | 'tiktok' | 'twitter' | 'youtube';
   setValue: (value: string) => void;
 }
 
 export interface FormState {
+  // Text inputs
   title: string;
   author: string;
-  job: string;
-  github: string;
+
+  // Customizations
+  titleFontSize: string;
+  primaryFont: string;
+  secondaryFont: string;
+  lineHeight: string;
+  bgcolor: string;
+  textcolor: string;
+
+  // Social media
+  website: string;
+  email: string;
+  bluesky: string;
+  instagram: string;
+  facebook: string;
   figma: string;
-  twitter: string;
+  github: string;
   linkedin: string;
+  tiktok: string;
+  twitter: string;
+  youtube: string;
 }

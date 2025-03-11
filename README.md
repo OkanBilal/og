@@ -1,11 +1,16 @@
 # og-image-generator
 
-You can generate Open Graph Images that you can embed in your `<meta>` tags for blog posts.
+Generate Open Graph images that you can embed in your `<meta>` tag of your web pages.
 
 ## Features
 
-- OG image generation
-- Customizable title, author, and job information
+- Customizable title and author fields.
+- Several optional social media fields.
+- Over 30 font options.
+- Customize foreground and background colour (with WCAG 2.0 contrast checking).
+- Generates a `.png` with a unique file name based on title.
+- Optimized for readability and mobile viewports.
+- Dynamic text scaling based on character count.
 
 ## Setup
 
@@ -23,11 +28,9 @@ npm run dev
 
 Open Graph is an internet protocol that was originally created by Facebook to standardize the use of metadata within a webpage to represent the content of a page.
 
-Within it, you can provide details as simple as the title of a page or as specific as the duration of a video. These pieces all fit together to form a representation of each individual page of the internet. For more detail you can view this [`link`](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/).
+Within it, you can provide details as simple as the title of a page or as specific as the duration of a video. These pieces all fit together to form a representation of each individual page of the internet. Learn more: [What is Open Graph and how can I use it for my website?](https://www.freecodecamp.org/news/what-is-open-graph-and-how-can-i-use-it-for-my-website/)
 
-To use open graph image protocol, you can put `<meta>` tag in the `<head>` of your webpage.
-
-It looks
+To use open graph image protocol, place the `<meta>` tag in the `<head>` of your web page.
 
 ```html
 <head>
@@ -35,7 +38,7 @@ It looks
 </head>
 ```
 
-## Example 
+## Example
 
 <p align="left">
   <img src="./og-image.png" width="300" alt="og-image" />

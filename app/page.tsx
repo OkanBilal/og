@@ -13,8 +13,13 @@ export default function Home() {
     if (cardRef.current) {
       htmlToImage.toPng(cardRef.current)
         .then((dataUrl) => {
+           const cardText = cardRef.current?.querySelector('.post-title')?.
+            textContent?.trim()
+            .toLowerCase()
+            .replace(/\s/g, '-') // Replace spaces with hyphens.
+            .replace(/[^\w\-]/g, ''); // Remove all special characters except for hyphens.
           const link = document.createElement('a');
-          link.download = 'og-image.png';
+          link.download = `og-${cardText}.png`;
           link.href = dataUrl;
           link.click();
         })

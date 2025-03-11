@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "OG Image Generator",
-  description: "Generate OG images for your blog posts",
+  title: "Open Graph Image Generator",
+  description: "Generate Open Graph images for your web pages.",
+  openGraph: {
+    title: "Open Graph Image Generator",
+    description: "Generate Open Graph images for your web pages.",
+    images: "https://og-image-generate.netlify.app/og-open-graph-image-generator.png",
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`antialiased`}>
         {children}
       </body>
     </html>
