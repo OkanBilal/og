@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import {
   Website,
   Email,
@@ -41,7 +41,7 @@ export function useOgForm() {
     setFormState(prev => ({ ...prev, [field]: value }));
   };
 
-  const [socialItems, setSocialItems] = useState<SocialItem[]>([
+  const [socialItemOrder, setSocialItems] = useState<SocialItem[]>([
     {
       id: 1,
       Icon: Website,
@@ -132,12 +132,10 @@ export function useOgForm() {
     },
   ]);
 
-  useEffect(() => {
-    setSocialItems(prevItems => prevItems.map(item => ({
-      ...item,
-      value: formState[item.key]
-    })));
-  }, [formState]);
+  const socialItems = useMemo(() => socialItemOrder.map(item => ({
+    ...item,
+    value: formState[item.key]
+  })), [socialItemOrder, formState]);
 
   return {
     formState,
